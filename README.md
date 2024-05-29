@@ -15,7 +15,7 @@ json-schema-editor is a lightweight json editor based on codemirror, providing s
 ### React
 ```tsx
 import { JSONSchema7 } from "json-schema";
-import { Editor } from "json-schema-editor-react";
+import { Editor } from "json-schema-enhanced-editor-react";
 import React from "react";
 
 interface IJSONInputWithSchemaProps {
@@ -51,7 +51,7 @@ export function JSONSchemaInput(props: IJSONInputWithSchemaProps) {
 }
 ```
 
-Read more: [json-schema-editor-react](https://github.com/rookie-luochao/json-schema-editor/tree/main/packages/json-schema-editor-react)
+Read more: [json-schema-enhanced-editor-react](https://github.com/rookie-luochao/json-schema-editor/tree/main/packages/json-schema-editor-react)
 
 ## License
 [MIT](https://github.com/rookie-luochao/json-schema-editor/blob/main/LICENSE)

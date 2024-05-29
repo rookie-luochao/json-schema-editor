@@ -1,5 +1,5 @@
 {
-  "name": "json-schema-editor-react",
+  "name": "json-schema-enhanced-editor-react",
   "description": "A lightweight react json editor based on codemirror, providing smart prompts and verification based on json-schema",
   "version": "0.1.0",
   "author": "rookie-luochao",

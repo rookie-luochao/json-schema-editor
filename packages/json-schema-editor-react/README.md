@@ -1,12 +1,12 @@
-# JSON-Schema-Editor-React
+# JSON-Schema-Enhanced-Editor-React
 
-json-schema-editor-react is a lightweight json editor based on react & codemirror, providing smart prompts and verification based on json-schema.
+json-schema-enhanced-editor-react is a lightweight json editor based on react & codemirror, providing smart prompts and verification based on json-schema.
 
 ## Usage
 
 ```tsx
 import { JSONSchema7 } from "json-schema";
-import { Editor } from "json-schema-editor-react";
+import { Editor } from "json-schema-enhanced-editor-react";
 import React from "react";
 
 interface IJSONInputWithSchemaProps {
