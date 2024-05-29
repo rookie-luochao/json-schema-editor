@@ -1,0 +1,75 @@
+{
+  "name": "json-schema-editor-react",
+  "description": "A lightweight react json editor based on codemirror, providing smart prompts and verification based on json-schema",
+  "version": "0.0.0",
+  "author": "rookie-luochao",
+  "homepage": "https://github.com/rookie-luochao/json-schema-editor",
+  "bugs": "https://github.com/rookie-luochao/json-schema-editor/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rookie-luochao/json-schema-editor.git",
+    "directory": "packages/json-schema-editor-react"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && tsup ./src/index.ts --format esm,cjs --dts",
+    "test": "vitest"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.16.0",
+    "@codemirror/commands": "^6.5.0",
+    "@codemirror/lang-json": "^6.0.1",
+    "@codemirror/language": "^6.10.1",
+    "@codemirror/lint": "^6.8.0",
+    "@codemirror/state": "^6.4.1",
+    "@codemirror/view": "^6.26.3",
+    "@lezer/common": "^1.2.1",
+    "@uiw/codemirror-theme-vscode": "^4.22.1",
+    "codemirror-json-schema": "^0.7.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@types/json-schema": "^7.0.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "jsdom": "^24.1.0",
+    "tsup": "^7.2.0",
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
+  },
+  "keywords": [
+    "json-schema-editor-react",
+    "react-json-schema-editor",
+    "json-schema-editor",
+    "json-editor",
+    "json-schema",
+    "json-validate",
+    "json"
+  ]
+}

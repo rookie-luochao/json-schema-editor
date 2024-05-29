@@ -1,0 +1,66 @@
+{
+  "name": "json-schema-editor",
+  "private": true,
+  "type": "module",
+  "description": "A middleware collection for using the OpenAPI-UI with NodeJS",
+  "author": "rookie-luochao",
+  "license": "MIT",
+  "scripts": {
+    "build": "pnpm --filter './packages/**' run build",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "test": "vitest",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@typescript-eslint/parser": "^7.9.0",
+    "eslint": "^8.56.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix --quiet"
+    ],
+    "*.(ts|tsx|json|html)": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "printWidth": 120
+  }
+}
