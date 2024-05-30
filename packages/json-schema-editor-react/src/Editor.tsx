@@ -4,18 +4,7 @@ import { jsonSchema, updateSchema } from "codemirror-json-schema";
 import { JSONSchema7 } from "json-schema";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { commonExtensions } from "./extensions";
-
-function cleanedMapStr(mapString?: string) {
-  if (!mapString) {
-    return "";
-  }
-
-  return JSON.stringify(JSON.parse(mapString));
-}
-
-function getRandomInt(max: number) {
-  return Math.floor(Math.random() * max);
-}
+import { cleanedMapStr, getRandomInt } from "./utils";
 
 export interface IEditorProps {
   value: string;
@@ -27,7 +16,7 @@ export interface IEditorProps {
 }
 
 export function Editor(props: IEditorProps) {
-  const { value, onChange, schema, height = 300, tabSize = 4, extensions } = props;
+  const { value, onChange, schema, height = "300px", tabSize = 4, extensions } = props;
   const editorRef = useRef<EditorView | null>(null);
   const [domId] = useState(`json-schema-editor-${getRandomInt(1000)}`);
 
