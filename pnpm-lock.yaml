@@ -75,8 +75,8 @@ importers:
         specifier: ^4.22.1
         version: 4.22.1(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)
       codemirror-json-schema:
-        specifier: ^0.7.2
-        version: 0.7.2(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
+        specifier: ^0.7.3
+        version: 0.7.3(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -2336,8 +2336,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
-  /codemirror-json-schema@0.7.2(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1):
-    resolution: {integrity: sha512-7NY/3bEV3szrp3IqJfFQ7KspZc6WAHs1pFijpy64s8mvteylYfD2AhPUazX7P+j4UkxXdfb9f1Si67dw3by4+g==}
+  /codemirror-json-schema@0.7.3(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1):
+    resolution: {integrity: sha512-uhnoJkM+D7QwC85ZQwh+uzZ+bDIldVhSCfV/uuU7noClI0ZCNyETOfxkWAJg1PIvf+a1e0MxJRV3UV1VSEWe+A==}
     peerDependencies:
       '@codemirror/language': ^6.8.0
       '@codemirror/lint': ^6.4.0
