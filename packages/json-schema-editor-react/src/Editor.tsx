@@ -1,4 +1,4 @@
-import { EditorState, StateEffect } from "@codemirror/state";
+import { EditorState, Extension, StateEffect } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import { jsonSchema, updateSchema } from "codemirror-json-schema";
 import { JSONSchema7 } from "json-schema";
@@ -12,7 +12,7 @@ export interface IEditorProps {
   schema?: JSONSchema7;
   height?: string;
   tabSize?: number;
-  extensions?: import("@codemirror/state").Extension[];
+  extensions?: Extension[];
 }
 
 export function Editor(props: IEditorProps) {
@@ -22,7 +22,6 @@ export function Editor(props: IEditorProps) {
 
   const customExtensions = useMemo(() => {
     return [
-      EditorState.tabSize.of(tabSize),
       EditorView.theme({
         "&": {
           height: height,
@@ -40,6 +39,7 @@ export function Editor(props: IEditorProps) {
 
     const lastExtensions = [
       commonExtensions,
+      EditorState.tabSize.of(tabSize),
       customExtensions,
       jsonSchema(schema as unknown as JSONSchema7),
       updateListener,
@@ -61,7 +61,7 @@ export function Editor(props: IEditorProps) {
         effects: StateEffect.reconfigure.of(lastExtensions),
       });
     }
-  }, [commonExtensions, customExtensions, extensions]);
+  }, [tabSize, commonExtensions, customExtensions, extensions]);
 
   useEffect(() => {
     if (cleanedMapStr(value) !== cleanedMapStr(editorRef.current?.state.doc.toString())) {
@@ -69,6 +69,10 @@ export function Editor(props: IEditorProps) {
         changes: { from: 0, to: editorRef.current?.state.doc.length, insert: value },
       });
     }
+    // editorRef.current?.dispatch({
+    //   changes: { from: 0, to: editorRef.current?.state.doc.length, insert: value },
+    //   selection: { anchor: cleanedMapStr(value) !== cleanedMapStr(editorRef.current?.state.doc.toString()) ? value?.length : editorRef.current?.state.doc.length }
+    // });
   }, [value]);
 
   useEffect(() => {

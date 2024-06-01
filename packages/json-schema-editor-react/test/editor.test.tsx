@@ -16,7 +16,7 @@ describe("suite", () => {
 describe("render app", () => {
   it("app should be render", () => {
     render(<StartAppDemo />);
-    expect(screen.getByText("json-schema-editor")).toBeInTheDocument();
+    expect(screen.getByText("json-schema-enhanced-editor-react")).toBeInTheDocument();
   });
 });
 

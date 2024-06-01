@@ -3,7 +3,7 @@ export function cleanedMapStr(mapString?: string) {
     return "";
   }
 
-  return JSON.stringify(JSON.parse(mapString));
+  return mapString.replace(/\s+/g, "");
 }
 
 export function getRandomInt(max: number) {

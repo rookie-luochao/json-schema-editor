@@ -11,6 +11,6 @@
     "examples/**/*.tsx",
     "test/**/*.ts",
     "test/**/*.tsx",
-    "test/setupTests.mjs"
+    "test/setupTests.ts"
   ]
 }
