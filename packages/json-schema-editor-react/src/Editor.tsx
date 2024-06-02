@@ -76,7 +76,7 @@ export function Editor(props: IEditorProps) {
         effects: StateEffect.reconfigure.of(lastExtensions),
       });
     }
-  }, [height, tabSize, schema, commonExtensions, extensions]);
+  }, [height, tabSize, commonExtensions, extensions]);
 
   useEffect(() => {
     if (cleanedMapStr(value) !== cleanedMapStr(editorRef.current?.state.doc.toString())) {
