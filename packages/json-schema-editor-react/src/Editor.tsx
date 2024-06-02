@@ -76,7 +76,7 @@ export function Editor(props: IEditorProps) {
         effects: StateEffect.reconfigure.of(lastExtensions),
       });
     }
-  }, [height, tabSize, commonExtensions, extensions]);
+  }, [height, tabSize, schema, commonExtensions, extensions]);
 
   useEffect(() => {
     if (cleanedMapStr(value) !== cleanedMapStr(editorRef.current?.state.doc.toString())) {
@@ -91,7 +91,7 @@ export function Editor(props: IEditorProps) {
   }, [value]);
 
   useEffect(() => {
-    if (editorRef.current && schema) {
+    if (editorRef.current) {
       updateSchema(editorRef.current, schema as unknown as JSONSchema7);
     }
   }, [schema]);
