@@ -9,34 +9,29 @@ import { JSONSchema7 } from "json-schema";
 import { Editor } from "json-schema-enhanced-editor-react";
 import React from "react";
 
-interface IJSONInputWithSchemaProps {
-  value: object | null;
-  onChange: (value: object | null) => void;
-  schema: JSONSchema7;
-  height?: number;
-}
-
-export function JSONSchemaInput(props: IJSONInputWithSchemaProps) {
-  const value = props.value ? JSON.stringify(props.value, null, 4) : "{}";
+export function JSONSchemaInputDemo() {
+  const [value, setValue] = useState<object | null>({ ...mock.package });
+  const [schema, setSchema] = useState<JSONSchema7 | null>(null);
+  const [height, setHeight] = useState("300px");
 
   return (
-    <Editor
-      height={props.height || "300px"}
-      schema={props.schema}
-      value={value}
+    <Editor 
+      value={value ? JSON.stringify(value, null, 4) : "{}"}
       onChange={(value) => {
-        if (!value) return props.onChange(null);
+        if (!value) return setValue(null);
 
         try {
-          const result = JSON.parse(value);
-          
+          const result = JSON.parse(value) as object;
+
           if (result) {
-            props.onChange(result);
+            setValue(result);
           }
         } catch (e) {
           // _
         }
       }}
+      schema={schema as unknown as JSONSchema7}
+      height={height}
     />
   );
 }

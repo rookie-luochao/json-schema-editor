@@ -1,6 +1,6 @@
 import { JSONSchema7 } from "json-schema";
 import React, { SyntheticEvent, useEffect, useState } from "react";
-import { JSONSchemaInput } from "./JSONSchemaInput";
+import { Editor } from "../src/Editor";
 
 const mock = {
   package: {
@@ -27,9 +27,10 @@ export function JSONSchemaInputDemo() {
     void changeSchema(schemaFile);
   }, []);
 
-  const onChange = (newValue: object | null) => {
-    setValue(newValue);
-  };
+  async function changeSchema(schemaFileName: string) {
+    const data = (await (await fetch(`https://json.schemastore.org/${schemaFileName}`)).json()) as JSONSchema7;
+    setSchema(data);
+  }
 
   const handleChange = (e: SyntheticEvent) => {
     const val = (e.target as HTMLInputElement).value;
@@ -42,10 +43,9 @@ export function JSONSchemaInputDemo() {
     void changeSchema(val);
   };
 
-  async function changeSchema(schemaFileName: string) {
-    const data = (await (await fetch(`https://json.schemastore.org/${schemaFileName}`)).json()) as JSONSchema7;
-    setSchema(data);
-  }
+  const handleHeightChange = (e: SyntheticEvent) => {
+    setHeight((e.target as HTMLInputElement).value);
+  };
 
   const handleClick = () => {
     setValue({ ...mock.eslintrc });
@@ -53,10 +53,6 @@ export function JSONSchemaInputDemo() {
 
   const handleClick2 = () => {
     setValue({ ...mock.package });
-  };
-
-  const handleHeightChange = (e: SyntheticEvent) => {
-    setHeight((e.target as HTMLInputElement).value);
   };
 
   return (
@@ -81,7 +77,24 @@ export function JSONSchemaInputDemo() {
         </button>
       </div>
       <div style={{ width: "70%" }}>
-        <JSONSchemaInput value={value} onChange={onChange} schema={schema as unknown as JSONSchema7} height={height} />
+        <Editor
+          value={value ? JSON.stringify(value, null, 4) : "{}"}
+          onChange={(value) => {
+            if (!value) return setValue(null);
+
+            try {
+              const result = JSON.parse(value) as object;
+
+              if (result) {
+                setValue(result);
+              }
+            } catch (e) {
+              // _
+            }
+          }}
+          schema={schema as unknown as JSONSchema7}
+          height={height}
+        />
       </div>
     </div>
   );

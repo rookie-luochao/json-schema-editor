@@ -2,9 +2,9 @@ import { EditorState, Extension, StateEffect } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import { jsonSchema, updateSchema } from "codemirror-json-schema";
 import { JSONSchema7 } from "json-schema";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { commonExtensions } from "./extensions";
-import { cleanedMapStr, getRandomInt } from "./utils";
+import { cleanedMapStr, formatJson, getRandomInt } from "./utils";
 
 export interface IEditorProps {
   value: string;
@@ -20,29 +20,44 @@ export function Editor(props: IEditorProps) {
   const editorRef = useRef<EditorView | null>(null);
   const [domId] = useState(`json-schema-editor-${getRandomInt(1000)}`);
 
-  const customExtensions = useMemo(() => {
-    return [
+  useEffect(() => {
+    const lastExtensions = [
+      commonExtensions,
       EditorView.theme({
         "&": {
           height: height,
         },
       }),
-    ];
-  }, [tabSize, height]);
-
-  useEffect(() => {
-    const updateListener = EditorView.updateListener.of((update) => {
-      if (update.docChanged) {
-        onChange(update.state.doc.toString());
-      }
-    });
-
-    const lastExtensions = [
-      commonExtensions,
       EditorState.tabSize.of(tabSize),
-      customExtensions,
+      EditorView.domEventHandlers({
+        paste(event, view) {
+          const clipboardData = event.clipboardData;
+
+          if (!clipboardData) {
+            return;
+          }
+
+          const text = clipboardData.getData("text/plain");
+          const formattedText = formatJson(text, tabSize);
+
+          if (formattedText !== text) {
+            event.preventDefault();
+            view.dispatch({
+              changes: {
+                from: view.state.selection.main.from,
+                to: view.state.selection.main.to,
+                insert: formattedText,
+              },
+            });
+          }
+        },
+      }),
       jsonSchema(schema as unknown as JSONSchema7),
-      updateListener,
+      EditorView.updateListener.of((update) => {
+        if (update.docChanged) {
+          onChange(update.state.doc.toString());
+        }
+      }),
       extensions || [],
     ];
 
@@ -61,7 +76,7 @@ export function Editor(props: IEditorProps) {
         effects: StateEffect.reconfigure.of(lastExtensions),
       });
     }
-  }, [tabSize, commonExtensions, customExtensions, extensions]);
+  }, [height, tabSize, commonExtensions, extensions]);
 
   useEffect(() => {
     if (cleanedMapStr(value) !== cleanedMapStr(editorRef.current?.state.doc.toString())) {
