@@ -35,7 +35,8 @@
     }
   },
   "files": [
-    "dist",
+    "dist/cjs",
+    "dist/es",
     "CHANGELOG.md"
   ],
   "dependencies": {
