@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "pnpm --filter './packages/**' run build",
+    "build:app": "pnpm --filter './packages/json-schema-editor-react' run build:app",
     "changeset": "changeset",
     "version": "changeset version",
     "publish": "pnpm build & changeset publish",

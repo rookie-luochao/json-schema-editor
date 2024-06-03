@@ -7,7 +7,6 @@ json-schema-enhanced-editor-react is a lightweight json editor based on react & 
 ```tsx
 import { JSONSchema7 } from "json-schema";
 import { Editor } from "json-schema-enhanced-editor-react";
-import React from "react";
 
 export function JSONSchemaInputDemo() {
   const [value, setValue] = useState<object | null>({ ...mock.package });

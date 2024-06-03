@@ -16,6 +16,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rm -rf dist && tsup ./src/index.ts --format esm,cjs --dts",
+    "build:app": "rm -rf dist-app && vite build --config vite.config.ts",
     "test": "vitest"
   },
   "type": "module",
