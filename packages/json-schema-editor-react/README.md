@@ -1,5 +1,7 @@
 # JSON-Schema-Enhanced-Editor-React
 
+[![npm package](https://img.shields.io/npm/v/json-schema-enhanced-editor-react.svg)](https://www.npmjs.com/package/json-schema-enhanced-editor-react)
+
 json-schema-enhanced-editor-react is a lightweight json editor based on react & codemirror, providing smart prompts and verification based on json-schema.
 
 ## Usage

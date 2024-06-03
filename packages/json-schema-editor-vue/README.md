@@ -1,5 +1,7 @@
 # JSON-Schema-Enhanced-Editor-Vue
 
+[![npm package](https://img.shields.io/npm/v/json-schema-enhanced-editor-vue.svg)](https://www.npmjs.com/package/json-schema-enhanced-editor-vue)
+
 json-schema-enhanced-editor-vue is a lightweight json editor based on vue & codemirror, providing smart prompts and verification based on json-schema.
 
 ## Usage
