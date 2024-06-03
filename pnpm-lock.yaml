@@ -57,8 +57,8 @@ importers:
   packages/json-schema-editor-react:
     dependencies:
       '@codemirror/autocomplete':
-        specifier: ^6.16.0
-        version: 6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
+        specifier: ^6.16.2
+        version: 6.16.2(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
       '@codemirror/commands':
         specifier: ^6.5.0
         version: 6.5.0
@@ -127,7 +127,7 @@ importers:
   packages/json-schema-editor-vue:
     dependencies:
       '@codemirror/autocomplete':
-        specifier: ^6.16.0
+        specifier: ^6.16.2
         version: 6.16.2(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
       '@codemirror/commands':
         specifier: ^6.5.0
@@ -657,20 +657,6 @@ packages:
       human-id: 1.0.2
       prettier: 2.8.8
     dev: true
-
-  /@codemirror/autocomplete@6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1):
-    resolution: {integrity: sha512-P/LeCTtZHRTCU4xQsa89vSKWecYv1ZqwzOd5topheGRf+qtacFgBeIMQi3eL8Kt/BUNvxUWkx+5qP2jlGoARrg==}
-    peerDependencies:
-      '@codemirror/language': ^6.0.0
-      '@codemirror/state': ^6.0.0
-      '@codemirror/view': ^6.0.0
-      '@lezer/common': ^1.0.0
-    dependencies:
-      '@codemirror/language': 6.10.1
-      '@codemirror/state': 6.4.1
-      '@codemirror/view': 6.26.3
-      '@lezer/common': 1.2.1
-    dev: false
 
   /@codemirror/autocomplete@6.16.2(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1):
     resolution: {integrity: sha512-MjfDrHy0gHKlPWsvSsikhO1+BOh+eBHNgfH1OXs1+DAf30IonQldgMM3kxLDTG9ktE7kDLaA1j/l7KMPA4KNfw==}
