@@ -10,7 +10,7 @@
     "build:app": "pnpm --filter './packages/json-schema-editor-react' run build:app",
     "changeset": "changeset",
     "version": "changeset version",
-    "publish": "pnpm build & pnpm -r publish --no-git-checks --access public",
+    "publish": "pnpm -r publish --no-git-checks --access public",
     "test": "vitest",
     "prepare": "husky"
   },
