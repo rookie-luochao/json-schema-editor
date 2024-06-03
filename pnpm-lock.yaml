@@ -84,8 +84,8 @@ importers:
         specifier: ^4.22.1
         version: 4.22.1(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)
       codemirror-json-schema:
-        specifier: ^0.7.6
-        version: 0.7.6(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(typescript@5.4.5)(vite@5.2.12)
+        specifier: ^0.7.7
+        version: 0.7.7(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(typescript@5.4.5)(vite@5.2.12)
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -154,8 +154,8 @@ importers:
         specifier: ^4.22.1
         version: 4.22.1(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)
       codemirror-json-schema:
-        specifier: ^0.7.6
-        version: 0.7.6(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(typescript@5.4.5)(vite@5.2.12)
+        specifier: ^0.7.7
+        version: 0.7.7(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(typescript@5.4.5)(vite@5.2.12)
       vue:
         specifier: ^3.4.27
         version: 3.4.27(typescript@5.4.5)
@@ -2704,8 +2704,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
-  /codemirror-json-schema@0.7.6(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(typescript@5.4.5)(vite@5.2.12):
-    resolution: {integrity: sha512-s8U3NHvW6N1NtgKWcRiJU56kg5o6BZbujpmZxdVssdgyAXeLQ5BDkzfrHHDdVuMDsNxYB9X/xrx3hZhtxp7HAw==}
+  /codemirror-json-schema@0.7.7(@codemirror/language@6.10.1)(@codemirror/lint@6.8.0)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)(typescript@5.4.5)(vite@5.2.12):
+    resolution: {integrity: sha512-TR0PEeHCzfTK1gwewi1yxkSPujMEFLu/vq/q8UEHPljOW9vdNyMdDJysE/ZQ9vQyP3lZB6+KEDFW0GWj1opRkg==}
     peerDependencies:
       '@codemirror/language': ^6.8.0
       '@codemirror/lint': ^6.4.0
