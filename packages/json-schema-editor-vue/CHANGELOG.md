@@ -1,5 +1,11 @@
 # json-schema-enhanced-editor-vue
 
+## 0.1.3
+
+### Patch Changes
+
+- [`0529341`](https://github.com/rookie-luochao/json-schema-editor/commit/0529341f5f93bbf972509718ad8f4eff1ed1baa9) Thanks [@rookie-luochao](https://github.com/rookie-luochao)! - fix package.json
+
 ## 0.1.1
 
 ### Patch Changes
