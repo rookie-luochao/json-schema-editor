@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "jsx": "preserve"
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "examples/**/*.ts",
+    "examples/**/*.vue",
+    "test/**/*.ts",
+    "test/setupTests.ts"
+  ]
+}

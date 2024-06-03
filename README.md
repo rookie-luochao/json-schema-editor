@@ -1,6 +1,6 @@
 # JSON-Schema-Editor
 
-A json-schema-editor collection, support react framework, will support vue3、svelte.<br />
+A json-schema-editor collection, support react、vue framework, will support svelte framework.<br />
 json-schema-editor is a lightweight json editor based on codemirror, providing smart prompts and verification based on json-schema.
 
 ## List of Contents
@@ -8,6 +8,7 @@ json-schema-editor is a lightweight json editor based on codemirror, providing s
 - List of Contents
 - [Usage](#Usage)
   - [React](#react)
+  - [Vue](#vue)
 - [License](#license)
 
 ## Usage
@@ -16,7 +17,6 @@ json-schema-editor is a lightweight json editor based on codemirror, providing s
 ```tsx
 import { JSONSchema7 } from "json-schema";
 import { Editor } from "json-schema-enhanced-editor-react";
-import React from "react";
 
 export function JSONSchemaInputDemo() {
   const [value, setValue] = useState<object | null>({ ...mock.package });
@@ -47,6 +47,32 @@ export function JSONSchemaInputDemo() {
 ```
 
 Read more: [json-schema-enhanced-editor-react](https://github.com/rookie-luochao/json-schema-editor/tree/main/packages/json-schema-editor-react)
+
+### Vue
+```vue
+<template>
+  <Editor
+    v-model="value"
+    :schema="schema"
+    :height="height"
+    :change="onChange"
+  />
+</template>
+<script setup lang="ts">
+import { JSONSchema7 } from "json-schema";
+import { Editor } from "json-schema-enhanced-editor-vue";
+
+const value: Ref<string> = ref(JSON.stringify({ ...mock.package }, null, 4));
+const schema: Ref<JSONSchema7 | null> = ref(null);
+const height: Ref<string> = ref("300px");
+
+const onChange = (value: string) => {
+  console.log('value: ', value);
+}
+</script>
+```
+
+Read more: [json-schema-enhanced-editor-vue](https://github.com/rookie-luochao/json-schema-editor/tree/main/packages/json-schema-editor-vue)
 
 ## License
 [MIT](https://github.com/rookie-luochao/json-schema-editor/blob/main/LICENSE)

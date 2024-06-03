@@ -2,7 +2,7 @@
   "name": "json-schema-editor",
   "private": true,
   "type": "module",
-  "description": "A middleware collection for using the OpenAPI-UI with NodeJS",
+  "description": "A lightweight json editor based on codemirror, providing smart prompts and verification based on json-schema",
   "author": "rookie-luochao",
   "license": "MIT",
   "scripts": {
@@ -21,12 +21,14 @@
     "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
     "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.26.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "vitest": "^1.6.0",
+    "vue-eslint-parser": "^9.4.3"
   },
   "commitlint": {
     "extends": [
@@ -53,10 +55,10 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,vue}": [
       "eslint --fix --quiet"
     ],
-    "*.(ts|tsx|json|html)": [
+    "*.(ts|tsx|vue|json|html)": [
       "prettier --write"
     ]
   },
