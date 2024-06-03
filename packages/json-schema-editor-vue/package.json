@@ -1,7 +1,7 @@
 {
   "name": "json-schema-enhanced-editor-vue",
   "description": "A lightweight vue json editor based on codemirror, providing smart prompts and verification based on json-schema",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "rookie-luochao",
   "homepage": "https://github.com/rookie-luochao/json-schema-editor",
   "bugs": "https://github.com/rookie-luochao/json-schema-editor/issues",
@@ -15,13 +15,13 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "rm -rf dist && vite build --config vite.package.config.ts",
+    "build": "vite build --config vite.package.config.ts",
     "test": "vitest"
   },
   "type": "module",
-  "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  "types": "dist/es/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/es/index.js",
+  "types": "./dist/es/index.d.ts",
   "exports": {
     ".": {
       "import": {
@@ -35,7 +35,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "CHANGELOG.md"
   ],
   "dependencies": {
     "@codemirror/autocomplete": "^6.16.0",
