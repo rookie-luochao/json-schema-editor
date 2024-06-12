@@ -60,8 +60,8 @@ importers:
         specifier: ^6.16.2
         version: 6.16.2(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
       '@codemirror/commands':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^6.6.0
+        version: 6.6.0
       '@codemirror/lang-json':
         specifier: ^6.0.1
         version: 6.0.1
@@ -130,8 +130,8 @@ importers:
         specifier: ^6.16.2
         version: 6.16.2(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
       '@codemirror/commands':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^6.6.0
+        version: 6.6.0
       '@codemirror/lang-json':
         specifier: ^6.0.1
         version: 6.0.1
@@ -689,12 +689,12 @@ packages:
     dev: false
     optional: true
 
-  /@codemirror/commands@6.5.0:
-    resolution: {integrity: sha512-rK+sj4fCAN/QfcY9BEzYMgp4wwL/q5aj/VfNSoH1RWPF9XS/dUwBkvlL3hpWgEjOqlpdN1uLC9UkjJ4tmyjJYg==}
+  /@codemirror/commands@6.6.0:
+    resolution: {integrity: sha512-qnY+b7j1UNcTS31Eenuc/5YJB6gQOzkUoNmJQc0rznwqSRpeaWWpjkWy2C/MPTcePpsKJEM26hXrOXl1+nceXg==}
     dependencies:
-      '@codemirror/language': 6.10.1
+      '@codemirror/language': 6.10.2
       '@codemirror/state': 6.4.1
-      '@codemirror/view': 6.26.3
+      '@codemirror/view': 6.27.0
       '@lezer/common': 1.2.1
     dev: false
 
@@ -742,7 +742,6 @@ packages:
       '@lezer/lr': 1.4.0
       style-mod: 4.1.2
     dev: false
-    optional: true
 
   /@codemirror/lint@6.8.0:
     resolution: {integrity: sha512-lsFofvaw0lnPRJlQylNsC4IRt/1lI4OD/yYslrSGVndOJfStc58v+8p9dgGiD90ktOfL7OhBWns1ZETYgz0EJA==}
@@ -772,7 +771,6 @@ packages:
       style-mod: 4.1.2
       w3c-keyname: 2.2.8
     dev: false
-    optional: true
 
   /@commitlint/cli@19.3.0(@types/node@20.12.12)(typescript@5.4.5):
     resolution: {integrity: sha512-LgYWOwuDR7BSTQ9OLZ12m7F/qhNY+NpAyPBgo4YNMkACE7lGuUnuQq1yi9hz1KA4+3VqpOYl8H1rY/LYK43v7g==}
