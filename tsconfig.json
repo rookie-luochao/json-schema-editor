@@ -9,7 +9,11 @@
     "strict": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@common/*": ["packages/common/src/*"]
+    }
   },
   "types": ["vite/client"],
   "exclude": ["dist", "node_modules", "**/dist", "**/node_modules"]

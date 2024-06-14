@@ -7,9 +7,8 @@ import { EditorView } from "@codemirror/view";
 import { jsonSchema, updateSchema } from "codemirror-json-schema";
 import { JSONSchema7 } from "json-schema";
 import { Ref, ref, watch } from "vue";
-import { commonExtensions } from "./extensions";
 import { IEditorProps } from "./type";
-import { cleanedMapStr, formatJson, getRandomInt } from "./utils";
+import { commonExtensions, cleanedMapStr, formatJson, getRandomInt } from "@common/index";
 
 const props = withDefaults(defineProps<IEditorProps>(), {
   tabSize: 4,

@@ -9,8 +9,14 @@ export default defineConfig({
     dts({
       outDir: ["dist/es", "dist/cjs"],
       include: ["src/**/*.ts", "src/**/*.vue"],
+      rollupTypes: true,
     }),
   ],
+  resolve: {
+    alias: {
+      "@common": resolve(__dirname, "../common/src"),
+    },
+  },
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
@@ -35,7 +41,7 @@ export default defineConfig({
           format: "es",
           dir: "dist/es",
           entryFileNames: "[name].js",
-          preserveModules: true,
+          // preserveModules: true,
           globals: {
             vue: "Vue",
           },
@@ -44,7 +50,7 @@ export default defineConfig({
           format: "cjs",
           dir: "dist/cjs",
           entryFileNames: "[name].js",
-          preserveModules: true,
+          // preserveModules: true,
           globals: {
             vue: "Vue",
           },

@@ -1,19 +1,10 @@
-import { EditorState, Extension, StateEffect } from "@codemirror/state";
+import { EditorState, StateEffect } from "@codemirror/state";
 import { EditorView } from "@codemirror/view";
 import { jsonSchema, updateSchema } from "codemirror-json-schema";
 import { JSONSchema7 } from "json-schema";
 import React, { useEffect, useRef, useState } from "react";
-import { commonExtensions } from "./extensions";
-import { cleanedMapStr, formatJson, getRandomInt } from "./utils";
-
-export interface IEditorProps {
-  value: string;
-  onChange: (value: string | null | undefined) => void;
-  schema?: JSONSchema7;
-  height?: string;
-  tabSize?: number;
-  extensions?: Extension[];
-}
+import { commonExtensions, cleanedMapStr, formatJson, getRandomInt } from "@common/index";
+import { IEditorProps } from "./type";
 
 export function Editor(props: IEditorProps) {
   const { value, onChange, schema, height = "300px", tabSize = 4, extensions } = props;

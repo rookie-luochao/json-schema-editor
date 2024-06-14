@@ -22,7 +22,7 @@
 <script setup lang="ts">
 import { JSONSchema7 } from "json-schema";
 import { Ref, onMounted, ref } from "vue";
-import Editor from "../src/Editor.vue";
+import { Editor } from "../src";
 import StartAppDemo from "./StartAppDemo.vue";
 
 const mock = {

@@ -1,0 +1,26 @@
+{
+  "name": "common",
+  "description": "A lightweight json editor based on codemirror, providing smart prompts and verification based on json-schema",
+  "version": "0.1.0",
+  "private": true,
+  "author": "rookie-luochao",
+  "homepage": "https://github.com/rookie-luochao/json-schema-editor",
+  "bugs": "https://github.com/rookie-luochao/json-schema-editor/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rookie-luochao/json-schema-editor.git",
+    "directory": "packages/common"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@codemirror/autocomplete": "^6.16.0",
+    "@codemirror/commands": "^6.5.0",
+    "@codemirror/language": "^6.10.1",
+    "@codemirror/lint": "^6.8.0",
+    "@codemirror/view": "^6.26.3",
+    "@uiw/codemirror-theme-vscode": "^4.22.1"
+  }
+}
