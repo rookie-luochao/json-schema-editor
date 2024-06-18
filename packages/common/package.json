@@ -21,6 +21,6 @@
     "@codemirror/language": "^6.10.1",
     "@codemirror/lint": "^6.8.0",
     "@codemirror/view": "^6.26.3",
-    "@uiw/codemirror-theme-vscode": "^4.22.1"
+    "@uiw/codemirror-theme-vscode": "^4.22.2"
   }
 }
